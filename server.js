@@ -26,8 +26,8 @@ const Message = require('./schema');
 let online = 0;
 io.on('connection', (client) => {    
         console.log("User connected");
-        let allMessages = Message.find();    
-    client.broadcast.emit("all-masseges", allMessages);
+    //     let allMessages = Message.find();    
+    // client.broadcast.emit("all-masseges", allMessages);
         console.log(++online);   
     client.broadcast.emit("change-online", online);
     client.on("disconnect", () => {
